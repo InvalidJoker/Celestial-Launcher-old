@@ -6,11 +6,7 @@
 <div
   class="container relative h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0"
 >
-  <Button
-    href="/authentication"
-    variant="ghost"
-    class="absolute right-4 top-4 md:right-8 md:top-8"
-  >
+  <Button href="/auth" variant="ghost" class="absolute right-4 top-4 md:right-8 md:top-8">
     Login
   </Button>
   <div class="relative flex-col h-full p-10 text-white bg-muted dark:border-r lg:flex">

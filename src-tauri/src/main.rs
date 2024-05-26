@@ -4,6 +4,8 @@
     windows_subsystem = "windows"
 )]
 
+mod api;
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -17,6 +19,7 @@ fn main() {
         .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_window::init())
+        .plugin(api::utils::init())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

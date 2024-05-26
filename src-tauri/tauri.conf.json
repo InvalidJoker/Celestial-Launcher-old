@@ -3,7 +3,7 @@
     "beforeDevCommand": "vite dev",
     "beforeBuildCommand": "vite build",
     "devPath": "http://localhost:1420",
-    "distDir": "../build",
+    "distDir": "../dist",
     "withGlobalTauri": false
   },
   "package": {
@@ -62,8 +62,7 @@
         "fullscreen": false,
         "title": "celestial-launcher",
         "center": true,
-        "resizable": true,
-        "decorations": false,
+        "resizable": false,
         "transparent": true,
         "height": 900,
         "width": 1290
