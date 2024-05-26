@@ -1,12 +1,16 @@
-<script lang="ts">
-  import '../styles/globals.css';
-
-  import { onMount } from 'svelte';
-  import { setModeCurrent } from '$lib/light-switch/light-switch';
-
-  onMount(async () => {
-    setModeCurrent();
-  });
+<script>
+  import "../style.css";
 </script>
 
-<slot />
+<style>
+  :global(body) {
+    background-image: url(../images/bg.png);
+    background-size: cover;
+    background-position: center;
+
+  }
+</style>
+
+<div class="flex flex-col items-center justify-center h-screen text-white bg-opacity-50 backdrop-filter backdrop-blur-md bg-slate-800">
+  <slot />
+</div>

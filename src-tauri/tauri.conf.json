@@ -1,72 +1,46 @@
 {
   "build": {
-    "beforeDevCommand": "vite dev",
-    "beforeBuildCommand": "vite build",
+    "beforeDevCommand": "bun run dev",
+    "beforeBuildCommand": "bun run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist",
-    "withGlobalTauri": false
+    "distDir": "../build"
   },
   "package": {
-    "productName": "celestial-launcher"
+    "productName": "celestial-launcher",
+    "version": "0.0.0"
   },
   "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "windows": [
+      {
+        "title": "celestial-launcher",
+        "height": 920,
+        "center": true,
+        "resizable": false,
+        "transparent": true,
+        "width": 1300
+      }
+    ],
+    "security": {
+      "csp": null
+    },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
+      "targets": "all",
+      "identifier": "com.tauri.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ],
-      "identifier": "com.yourname.dev",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": "",
-        "nsis": {
-          "installerIcon": "./icons/icon.ico"
-        }
-      }
-    },
-    "security": {
-      "csp": null,
-      "dangerousRemoteDomainIpcAccess": [
-        {
-          "scheme": "https",
-          "domain": "tauri.localhost",
-          "windows": ["main"],
-          "plugins": ["app", "shell", "os", "event", "window"]
-        }
       ]
-    },
-    "windows": [
-      {
-        "fullscreen": false,
-        "title": "celestial-launcher",
-        "center": true,
-        "resizable": false,
-        "transparent": true,
-        "height": 900,
-        "width": 1290
-      }
-    ]
+    }
   }
 }
